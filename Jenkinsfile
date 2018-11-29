@@ -29,7 +29,10 @@ pipeline {
            post{
                always{
 
-                   println "ava se exportan los resultados de los test de aceptación"
+                    post{
+                         always{
+                                 junit 'build/test-results/test/*.xml'
+                               }
                }
            }
         }
